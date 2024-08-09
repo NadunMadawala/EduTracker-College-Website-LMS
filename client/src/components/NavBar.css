@@ -1,0 +1,22 @@
+/* src/components/NavBar.css */
+.appBar {
+  background-color: #1976d2;
+}
+
+.login {
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+.title {
+  flex-grow: 1;
+  color: white;
+  text-decoration: none;
+}
+
+.navLink {
+  color: white;
+  text-decoration: none;
+  border: solid 0px 0px 0px 3px whitesmoke;
+  justify-content: space-between;
+}
