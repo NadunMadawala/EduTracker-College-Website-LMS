@@ -6,7 +6,7 @@ import SchoolIcon from "@mui/icons-material/School";
 import { useEffect, useState } from "react";
 import { Typography, Box } from "@mui/material";
 import { jwtDecode } from "jwt-decode";
-import axios from "axios"; // Import axios for HTTP requests
+import axios from "axios";
 import { Link } from "react-router-dom";
 
 const Main = () => {
@@ -114,11 +114,23 @@ const Main = () => {
           />
         </div>
 
-        <Button type="submit" className="blue_btn">
+        <Button
+          type="submit"
+          className="blue_btn"
+          variant="contained"
+          color="primary"
+          style={{ margin: "10px" }}
+        >
           Add
         </Button>
         <Link to="/MainLoad">
-          <Button type="button" className="blue_btn">
+          <Button
+            type="button"
+            className="blue_btn"
+            variant="contained"
+            color="primary"
+            style={{ margin: "10px" }}
+          >
             View
           </Button>
         </Link>

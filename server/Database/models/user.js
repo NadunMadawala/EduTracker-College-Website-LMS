@@ -8,13 +8,12 @@ const userSchema = new mongoose.Schema({
   lastName: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  role: { type: String, required: true, enum: ["student", "teacher"] },
 });
 
-// Generate auth token including firstName and role in the payload
+// Generate auth token including firstName in the payload
 userSchema.methods.generateAuthToken = function () {
   const token = jwt.sign(
-    { _id: this._id, firstName: this.firstName, role: this.role },
+    { _id: this._id, firstName: this.firstName },
     process.env.JWTPRIVATEKEY,
     {
       expiresIn: "7d",
@@ -32,7 +31,6 @@ const validate = (data) => {
     lastName: Joi.string().required().label("Last Name"),
     email: Joi.string().email().required().label("Email"),
     password: passwordComplexity().required().label("Password"),
-    role: Joi.string().valid("student", "teacher").required().label("Role"), // Ensure role is either 'student' or 'teacher'
   });
   return schema.validate(data);
 };

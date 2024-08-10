@@ -25,3 +25,32 @@ router.get("/", async (req, res) => {
 });
 
 module.exports = router;
+
+// DELETE route to delete a subject by id
+router.delete("/:id", async (req, res) => {
+  try {
+    const subject = await Subject.findByIdAndDelete(req.params.id);
+    if (!subject) {
+      return res.status(404).send({ message: "Subject not found" });
+    }
+    res.status(200).send({ message: "Subject deleted successfully" });
+  } catch (error) {
+    res.status(500).send({ message: "Error deleting subject" });
+  }
+});
+
+// PUT route to update a subject by id
+router.put("/:id", async (req, res) => {
+  try {
+    const subject = await Subject.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+      runValidators: true,
+    });
+    if (!subject) {
+      return res.status(404).send({ message: "Subject not found" });
+    }
+    res.status(200).send(subject);
+  } catch (error) {
+    res.status(400).send({ message: "Error updating subject" });
+  }
+});

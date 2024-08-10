@@ -61,6 +61,11 @@ const Login = () => {
             <button type="submit" className="blue_btn">
               Sign In
             </button>
+            <Link to="/">
+              <button type="button" className="blue_btn">
+                Back
+              </button>
+            </Link>
           </form>
         </div>
         <div className="right">
