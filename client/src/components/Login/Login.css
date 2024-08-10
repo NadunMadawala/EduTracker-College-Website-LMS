@@ -43,12 +43,17 @@
 .input {
 	outline: none;
 	border: none;
-	width: 300px;
 	padding: 15px;
 	border-radius: 10px;
 	background-color: #edf5f3;
 	margin: 5px 5px;
 	font-size: 14px;
+}
+
+.form_container .input{
+	width: 250px;
+	margin-left: 5px;
+	margin-right: 5px;
 }
 
 .error_msg {
@@ -85,7 +90,7 @@
 .left .blue_btn {
 	border: none;
 	outline: none;
-	padding: 12px 0;
+	padding: 12px ;
 	border-radius: 20px;
 	width: 180px;
 	font-weight: bold;
@@ -93,6 +98,7 @@
 	cursor: pointer;
     background-color: #1976d2;
 	color:white; 
+	margin-bottom: 10px;
 }
 
 

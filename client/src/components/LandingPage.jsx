@@ -1,13 +1,52 @@
 import React from "react";
-import { Container, Typography, Box, Button, Grid, Paper } from "@mui/material";
+import { Typography, Box, Button, Grid, Paper } from "@mui/material";
 import { Link } from "react-router-dom";
 import "./LandingPage.css";
 import AssignmentIndIcon from "@mui/icons-material/AssignmentInd";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import SchoolIcon from "@mui/icons-material/School";
+import "./NavBar.css";
 
 function LandingPage() {
   return (
-    <Container className="root">
+    <div className="root">
+      <nav position="static" className="appBar">
+        <Toolbar>
+          <IconButton edge="start" aria-label="menu">
+            <SchoolIcon sx={{ color: "white", margin: 2 }} />
+          </IconButton>
+          <Typography color="white" variant="h6" className="title">
+            EduTracker
+          </Typography>
+          <Button color="inherit">
+            <a href="#home" className="navLink">
+              Home
+            </a>
+          </Button>
+          <Button color="inherit">
+            <a href="#features" className="navLink">
+              Features
+            </a>
+          </Button>
+          <Button color="inherit">
+            <a href="#contact" className="navLink">
+              Contact
+            </a>
+          </Button>
+          <a href="/login" className="login">
+            <Button
+              variant="contained"
+              color="secondary"
+              className="callToAction"
+            >
+              <AssignmentIndIcon />
+              &nbsp; Login
+            </Button>
+          </a>
+        </Toolbar>
+      </nav>
       <Box className="sectionA" id="home">
         <Typography variant="h2" className="title">
           Welcome to EduTracker
@@ -28,7 +67,11 @@ function LandingPage() {
       </Box>
 
       <Box className="sectionB" id="features">
-        <Typography variant="h4" className="title" style={{ marginBottom: 40 }}>
+        <Typography
+          variant="h4"
+          className="title"
+          style={{ marginBottom: 40, color: "#3bb19b" }}
+        >
           Features
         </Typography>
         <Grid container spacing={4}>
@@ -130,7 +173,7 @@ function LandingPage() {
           </Typography>
         </Box>
       </Box>
-    </Container>
+    </div>
   );
 }
 

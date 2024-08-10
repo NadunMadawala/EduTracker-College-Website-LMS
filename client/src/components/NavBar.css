@@ -1,6 +1,6 @@
 /* src/components/NavBar.css */
 .appBar {
-  background-color: #1976d2;
+  background-color:  #3bb19b;
 }
 
 .login {
@@ -10,8 +10,9 @@
 
 .title {
   flex-grow: 1;
-  color: white;
+  color:  #3bb19b;
   text-decoration: none;
+  align-content: flex-start;
 }
 
 .navLink {
@@ -19,4 +20,8 @@
   text-decoration: none;
   border: solid 0px 0px 0px 3px whitesmoke;
   justify-content: space-between;
+}
+
+.callToAction{
+  background-color: #1976d2;
 }

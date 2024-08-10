@@ -12,11 +12,11 @@
 .sectionB {
   margin-top: 50px;
   background-image: url('../images/background2.jpg'); /* Adjust path if in src */
-  background-size: cover; /* Cover the entire container */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Prevent repeating */
-  min-height: 70vh; /* Ensure it covers full height */
-  color: white; /* Adjust text color as needed */
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  min-height: 50vh; 
+  color: white; 
 }
 
 .sectionC {
@@ -55,7 +55,7 @@
 .footer {
   margin-top: 64px;
   padding: 32px 16px;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color:  #3bb19b;
   text-align: left;
   color: white;
 }

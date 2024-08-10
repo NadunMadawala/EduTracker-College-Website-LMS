@@ -38,7 +38,7 @@ const Login = () => {
       <div className="login_form_container">
         <div className="left">
           <form className="form_container" onSubmit={handleSubmit}>
-            <h1>Login to your Account</h1>
+            <h1>Login </h1>
             <input
               type="email"
               placeholder="Email"

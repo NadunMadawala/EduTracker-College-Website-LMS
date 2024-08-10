@@ -45,6 +45,11 @@ const SignUp = () => {
               Sign in
             </button>
           </Link>
+          <Link to="/">
+            <button type="button" className="blue_btn">
+              Back
+            </button>
+          </Link>
         </div>
         <div className="right">
           <form className="form_container" onSubmit={handleSubmit}>
