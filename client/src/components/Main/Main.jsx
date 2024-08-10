@@ -6,9 +6,15 @@ import SchoolIcon from "@mui/icons-material/School";
 import { useEffect, useState } from "react";
 import { Typography, Box } from "@mui/material";
 import { jwtDecode } from "jwt-decode";
+import axios from "axios"; // Import axios for HTTP requests
+import { Link } from "react-router-dom";
 
 const Main = () => {
   const [firstName, setFirstName] = useState("");
+  const [formData, setFormData] = useState({
+    title: "",
+    description: "",
+  });
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -23,6 +29,29 @@ const Main = () => {
     window.location.reload();
   };
 
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(
+        "http://localhost:8080/api/subject",
+        formData
+      );
+      console.log("Subject created:", response.data);
+    } catch (error) {
+      console.error(
+        "Error submitting form",
+        error.response?.data || error.message
+      );
+    }
+  };
+
   return (
     <div className={styles.root}>
       <div className={styles.main_container}>
@@ -33,19 +62,19 @@ const Main = () => {
           </IconButton>
           <Toolbar>
             <Button color="inherit">
-              <a href="#home" className={styles.navLink}>
+              <Link to="/Main" className={styles.navLink}>
                 Home
-              </a>
+              </Link>
             </Button>
             <Button color="inherit">
-              <a href="#features" className={styles.navLink}>
+              <Link to="#features" className={styles.navLink}>
                 Features
-              </a>
+              </Link>
             </Button>
             <Button color="inherit">
-              <a href="#contact" className={styles.navLink}>
-                Contact
-              </a>
+              <Link to="/MainLoad" className={styles.navLink}>
+                Subjects
+              </Link>
             </Button>
           </Toolbar>
           <button className={styles.white_btn} onClick={handleLogout}>
@@ -56,6 +85,45 @@ const Main = () => {
           <h2>Hi, {firstName}!</h2>
         </div>
       </div>
+
+      <form onSubmit={handleSubmit} className="form">
+        <h1>Create subject</h1>
+
+        <div className="form-row">
+          <input
+            type="text"
+            id="title"
+            name="title"
+            value={formData.title}
+            onChange={handleChange}
+            required
+            className="input"
+            placeholder="Enter subject title"
+          />
+        </div>
+        <div className="form-row">
+          <input
+            type="text"
+            id="description"
+            name="description"
+            value={formData.description}
+            onChange={handleChange}
+            required
+            className="input"
+            placeholder="Enter subject description"
+          />
+        </div>
+
+        <Button type="submit" className="blue_btn">
+          Add
+        </Button>
+        <Link to="/MainLoad">
+          <Button type="button" className="blue_btn">
+            View
+          </Button>
+        </Link>
+      </form>
+
       <div className={styles.footer} id="contact">
         <div className={styles.footerGrid}>
           <div className={styles.footerColumn}>

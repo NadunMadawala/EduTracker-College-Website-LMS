@@ -8,6 +8,7 @@ import TeacherDashboard from "./components/Teacher/TeacherDashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
 import "./App.css";
 import Main from "./components/Main/Main";
+import MainLoad from "./components/Main/MainLoad";
 
 function App() {
   return (
@@ -39,6 +40,8 @@ function App() {
           </ProtectedRoute>
         }
       />
+      <Route path="/" element={<Main />} />
+      <Route path="/MainLoad" element={<MainLoad />} />
     </Routes>
   );
 }

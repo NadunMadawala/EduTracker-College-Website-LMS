@@ -7,7 +7,18 @@
 .main_container {
     flex: 1;
 }
-
+.navLink{
+    color: white;
+    font-size: 15px;
+    margin-left: 20px;
+    text-decoration: none;
+}
+.navLink:hover{
+    color: grey;
+    font-size: 18px;
+    margin-left: 20px;
+    text-decoration: none;
+}
 .navbar {
     width: 100%;
     height: 70px;
@@ -43,6 +54,34 @@
     padding: 20px;
     border-radius: 8px;
 }
+.form{
+    align-items: center !important;
+    justify-content: center;
+    display: flex;
+}
+
+form .input {
+	outline: none;
+	border: none;
+	width: 370px;
+	padding: 15px;
+	border-radius: 10px;
+	background-color: #edf5f3;
+	margin: 5px 0;
+	font-size: 14px;
+}
+Button .blue_btn {
+	background: #1976d2 ;
+	color:white; 
+    border: solid;
+	padding: 12px 0;
+	border-radius: 20px;
+	width: 180px;
+	font-weight: bold;
+	font-size: 14px;
+	cursor: pointer;
+}
+
 
 .welcome_banner h2 {
     margin: 0;
